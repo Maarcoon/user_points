@@ -1,27 +1,25 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Total points:</strong>
+  <strong><%= User.human_attribute_name(:total_points) %>:</strong>
   <%= @user.total_points %>
 </p>
 
 <% @user.points.each do |p| %>
   <hr>
   <p>
-    <strong>Date:</strong>
+    <strong><%= Point.human_attribute_name(:received_on) %>:</strong>
     <%= I18n.l(p.received_on) %>
   </p>
   <p>
-    <strong>Points:</strong>
+    <strong><%= Point.human_attribute_name(:value) %>:</strong>
     <%= p.value %>
   </p>
 <% end %>
 
 <hr>
 
-<%= link_to 'Back', users_path %>
+<%= link_to I18n.t('defaults.back'), users_path %>

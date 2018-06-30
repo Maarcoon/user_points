@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      point: Pontos
+    attributes:
+      point:
+        received_on: Data de recebimento
+        value: Pontos

@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
+<h1><%= I18n.t('users.list') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Points</th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:total_points) %></th>
       <th></th>
     </tr>
   </thead>
@@ -16,7 +14,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.total_points %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to I18n.t('defaults.show'), user %></td>
       </tr>
     <% end %>
   </tbody>
