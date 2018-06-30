@@ -1,25 +1,21 @@
-<p>
-  <strong><%= User.human_attribute_name(:name) %>:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong><%= User.human_attribute_name(:total_points) %>:</strong>
-  <%= @user.total_points %>
-</p>
-
-<% @user.points.each do |p| %>
-  <hr>
-  <p>
-    <strong><%= Point.human_attribute_name(:received_on) %>:</strong>
-    <%= I18n.l(p.received_on) %>
-  </p>
-  <p>
-    <strong><%= Point.human_attribute_name(:value) %>:</strong>
-    <%= p.value %>
-  </p>
-<% end %>
-
-<hr>
+<h1> <%= @user.name %> (<%= @user.total_points %> pontos)</h1>
 
 <%= link_to I18n.t('defaults.back'), users_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Point.human_attribute_name(:received_on) %></th>
+      <th><%= Point.human_attribute_name(:value) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.points.each do |p| %>
+      <tr>
+        <td><%= I18n.l(p.received_on) %></td>
+        <td><%= p.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
