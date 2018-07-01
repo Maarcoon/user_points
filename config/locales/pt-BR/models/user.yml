@@ -1,4 +1,6 @@
 pt-BR:
+  user:
+    maximum_poins: Máximo (3126)
   activerecord:
     models:
       user: Usuário
