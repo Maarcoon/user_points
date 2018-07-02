@@ -11,6 +11,7 @@ class UserPointsImporter
   def import
     csv_user_points.each do |csv_user_point|
       user = User.find_or_create_by(id: csv_user_point.id)
+      next if user.total_points == 3126
       assign_points_to(user, csv_user_point)
     end
   end
